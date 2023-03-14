@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Eventos</title>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="container">
+
+    <header class="cabecalho">
+
+         <h1>SAVINIS</h1>
+            
+        <nav class="cabecalho_menu">
+            <a class="cabecalho_menu_item">Informativos dos Eventos</a>
+            <a class="cabecalho_menu_item">Palestrantes</a>
+            <a class="cabecalho_menu_item" href="lista_de_Participantes">Lista de Participates</a>
+        </nav>
+
+    </header>
+    <h2>Faça o seu cadastro aqui!</h2>
+    <main class="conteudo">
+        <form name="Cadastrar" method="post" autocomplete="off">
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" autocomplete="off" required>
+            </div>
+            <div>
+                <label for="fone">Celular com DDD:</label>
+                <input type="tel" id="fone" name="fone" placeholder="11 99999-9999" autocomplete="off" required >
+            </div>
+            <div>
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf" autocomplete="off" required>
+            </div>
+            <div>
+                <label for="data_nascimento">Data de Nascimento:</label>
+                <input type="date" id="data_nascimento" name="data_nascimento">
+            </div>
+            <div>
+                <label for="data-evento">Data do Evento:</label>
+                <input type="date" id="data-evento" name="data-evento">
+            </div>
+            <br>
+            <div>
+            <label for="nome_evento">Nome do Evento:</label>
+            <select id="nome_evento" name="nome_evento">
+                <option value="casamento">Bootcamp TechSenai</option>
+                <option value="aniversario">Infojobs</option>
+                <option value="formatura">Palestra Tech</option>
+                <option value="outro">Outro</option>
+            </select>
+            </div>
+            <br>
+            <div>
+                <input type="button" value="Cadastrar" onclick="validarForm()">
+            </div>
+        </form>
+      </main>
+    
+</body>
+</html>
