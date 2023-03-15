@@ -1,24 +1,22 @@
 function validarForm() {
   // Código de validação aqui
-  validaDataEvento();
-  validaDataNascimento();
-  registro()
-
-}
-
-
-function registro() {
+  validaDataEvento(), validaDataNascimento()
 
   let registro = {
     nome: nome.value,
     celular: fone.value,
     cpf: cpf.value,
-    palestra: nome_evento.value
+    palestra: nome_evento.value,
+    dataNascimento: data_evento.value,
+    dataEvento: data_nascimento.value,
 
   }
 
+
+  registro.push;
   console.log(registro)
 }
+
 
 
 
@@ -26,7 +24,7 @@ function registro() {
 function validaDataEvento() {
   let hoje = new Date(); //peda a data e hora atual
   //pega a data do formulário com o id data-evento
-  let dataEvento = document.getElementById("data-evento").value;
+  let dataEvento = document.getElementById("data_evento").value;
 
   // Converte a string "dataEvento" em um objeto Date
   let data = new Date(Date.parse(dataEvento));
