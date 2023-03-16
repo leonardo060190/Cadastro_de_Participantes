@@ -7,11 +7,39 @@
     <title>Lista</title>
     <script src="js/index.js"></script>
 </head>
-<body>
+<body onload="listar()">
 
     <h1>Lista de Participantes</h1>
 
-    <h2 id="lista"></h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>CPF</th>
+                <th>Data de Nascimento</th>
+                <th>Data do Evento</th>
+                <th>Nome do Evento</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        </tbody>
+
+        <script id="colunas" type="text/x-jsrender">
+        <td data-column="Nome"></td>
+        <td data-column="Telefone"></td>
+        <td data-column="CPF"></td>
+        <td data-column="Data_de_Nascimento"></td>
+        <td data-column="Data_do_Evento"></td>
+        <td data-column="Nome_do_Evento"></td>
+        </script>
+    </table>
+
+
+
+    
     
 </body>
 </html>

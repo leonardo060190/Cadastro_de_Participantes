@@ -2,7 +2,7 @@ function validarForm() {
   // Código de validação aqui
   validaDataEvento(), validaDataNascimento()
 
-  let registro = {
+  let registroParticipantes = {
     nome: nome.value,
     celular: fone.value,
     cpf: cpf.value,
@@ -12,9 +12,13 @@ function validarForm() {
 
   }
 
+  if (sessionStorage.getItem("vetor_participantes")){
+    registroParticipantes = sessionStorage.getItem("vetor_participantes")
+  }
 
-  registro.push;
-  console.log(registro)
+
+  registroParticipantes.push;
+  console.log(registroParticipantes)
 }
 
 
@@ -57,4 +61,37 @@ function validaDataNascimento() {
   } else {
     console.log("A pessoa é menor de idade");
   }
+}
+
+// pagina de lista
+
+function listar(){
+
+  let dados = document.getElementById("colunas");
+  let registros = document.getElementsByTagName("tbody")[0];
+
+  let registroParticipantes = sessionStorage.getItem("vetor_participantes");
+
+  for (let i = 0; i < registroParticipantes.length; i++){
+
+    let novaLinha = document.createElement("tr");
+
+    registros.appendChild(novaLinha);
+
+    novaLinha.innerHTML = dados.innerHTML;
+
+    for(let indice in novaLinha.childNodes){
+
+      let celula = novaLinha.childNodes[indice];
+
+      if(celula.nodeName == "TD"){
+
+        switch(celula.dataset.column){
+          case "Nome":
+            celula.innerHTML = registroParticipantes[i]["Nome"]
+        }
+      }
+    }
+  }
+
 }
