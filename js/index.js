@@ -1,7 +1,11 @@
 function validarForm() {
   // Código de validação aqui
-  validaDataEvento(), validaDataNascimento()
+  validaDataEvento(), validaDataNascimento(), cadastro(), listar()
 
+}
+
+
+function cadastro() {
   let registroParticipantes = {
     nome: nome.value,
     celular: fone.value,
@@ -12,14 +16,28 @@ function validarForm() {
 
   }
 
-  if (sessionStorage.getItem("vetor_participantes")){
-    registroParticipantes = sessionStorage.getItem("vetor_participantes")
-  }
-
 
   registroParticipantes.push;
   console.log(registroParticipantes)
+  
+  
+  for (let i = 0; i < registroParticipantes.length; i++)
+    if (registroParticipantes.length > 100) {
+      alert("Descupe ja atingimos o Limite de Paticipantes ")
+
+    }
+  console.log("ok")
+
 }
+
+
+function listar() {
+  
+  h2.value.innerhtml = registroParticipantes
+}
+
+
+
 
 
 
@@ -59,39 +77,8 @@ function validaDataNascimento() {
   if (idadeEmAnos >= 18) {
     console.log("A pessoa é maior de idade");
   } else {
+    window.location.href="paginaBloqueio.html";
     console.log("A pessoa é menor de idade");
   }
 }
 
-// pagina de lista
-
-function listar(){
-
-  let dados = document.getElementById("colunas");
-  let registros = document.getElementsByTagName("tbody")[0];
-
-  let registroParticipantes = sessionStorage.getItem("vetor_participantes");
-
-  for (let i = 0; i < registroParticipantes.length; i++){
-
-    let novaLinha = document.createElement("tr");
-
-    registros.appendChild(novaLinha);
-
-    novaLinha.innerHTML = dados.innerHTML;
-
-    for(let indice in novaLinha.childNodes){
-
-      let celula = novaLinha.childNodes[indice];
-
-      if(celula.nodeName == "TD"){
-
-        switch(celula.dataset.column){
-          case "Nome":
-            celula.innerHTML = registroParticipantes[i]["Nome"]
-        }
-      }
-    }
-  }
-
-}
