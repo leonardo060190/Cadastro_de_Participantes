@@ -7,14 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista</title>
     <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<div>
 
-<body onload="listar()">
+    <body onload="listar()">
+        <h1>Lista de Participantes</h1>
+        <hr>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>CPF</th>
+                    <th>Data de Nascimento</th>
+                    <th>Data do Evento</th>
+                    <th>Nome do evento</th>
+                </tr>
+            </thead>
 
-    <h1>Lista de Participantes</h1>
+            <tbody>
 
-    <h2></h2>
+            </tbody>
 
+        </table>
+
+        <script id="colunas" type="text/x-jsrender">
+        <td data-column="Nome"></td>
+        <td data-column=""Telefone></td>
+        <td data-column="Cpf"></td>
+        <td data-column="Data_de_nascimento"></td>
+        <td data-column="Data_do_evento"></td>
+        <td data-column="Nome_do_evento"></td>
+    </script>
+
+        <br>
+        <hr>
+        <br>
+        <button type="button" name="l_cadastro" id="l_cadastro"
+            onclick="window.location='Pagina_de_Cadastro.html'">Casdastro de
+            Clientes</button>
+
+        <!-- botão para voltar a página de login -->
+        <button type="button" name="l_home" id="l_home"
+            onclick="window.location='home.html'">Home</button>
+        <br><br>
+</div>
 
 </body>
 
