@@ -11,6 +11,7 @@
 body {
     font-size: 150%;
     background: linear-gradient(68.15deg, #5d5263d8 16.62%, #403557e3 85.61%);
+	
 }
 
 .container{
@@ -18,6 +19,7 @@ body {
     margin: 25%;
     margin-top: 3%;
     padding: 0%;
+	margin-bottom: 3px;
 }
 
 
@@ -26,16 +28,16 @@ h1{
     font-size: 30px;
 }
 
-.cabecalho_menu{
-
-    display: flex;
+h2{
+	text-align: center;
 }
+
 
 
 table {
 	border-collapse: collapse;
 	width: 100%;
-
+	color: aliceblue;
 }
 
 td {
@@ -57,7 +59,8 @@ th {
 }
 
 tr:hover {
-	background-color: rgba(216, 204, 204, 0.671)
+	background-color: rgba(236, 223, 223, 0.671);
+	color: black;
 }
 
 input {
@@ -109,7 +112,4 @@ select {
 
 }
 
-#Bloqueio{
-    font-size: 200%;
-    text-align: center;
-}
+

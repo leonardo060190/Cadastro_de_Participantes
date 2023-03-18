@@ -1,11 +1,12 @@
+// limita a quantidade de paessoas a lista de cadastro
 var limiteParticipantes = 0;
 
 function validarForm() {
   // Código de validação aqui
 
-  if(validaDataEvento() && validaDataNascimento()){
+  if(validaDataEvento() && validaDataNascimento() && cadastro()){
     alert ("Validação oK")
-    cadastro()
+    
   }else{
     alert("Você não esta autorizado")
   }
@@ -14,6 +15,7 @@ function validarForm() {
 
 
 function cadastro() {
+  // limita a quantidade de participantes a um valor definido
   limiteParticipantes++
   if(limiteParticipantes <= 100){
 
@@ -27,13 +29,11 @@ function cadastro() {
   let dataNacimento = document.getElementById("data_nascimento").value;
   let data_brasileira = dataNacimento .split('-').reverse().join('/');
   let dataEvento = document.getElementById("data_evento").value;
-  let data_brasileira_Evento =dataEvento .split('-').reverse().join('/');
+  let data_brasileira_Evento = dataEvento .split('-').reverse().join('/');
 
   if (sessionStorage.getItem("vetor_Participantes")) {
     participantes = JSON.parse(sessionStorage.getItem("vetor_Participantes"));
   };
-
-
 
 
   let registro = {}
@@ -103,10 +103,6 @@ function listar() {
   ;
 
 }
-
-
-
-
 
 function validaDataEvento() {
   let hoje = new Date(); //peda a data e hora atual
