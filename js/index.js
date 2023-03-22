@@ -4,11 +4,15 @@ var limiteParticipantes = 0;
 function validarForm() {
   // Código de validação aqui
 
-  if(validaDataEvento() && validaDataNascimento() && cadastro()){
-    alert ("Validação oK")
-    
-  }else{
+  if (validaDataEvento() && validaDataNascimento() && cadastro()) {
+
+    alert("Validação OK, Cadrastro efetuado com suceso!"
+    )
+
+
+  } else {
     alert("Você não esta autorizado")
+
   }
 
 }
@@ -17,45 +21,52 @@ function validarForm() {
 function cadastro() {
   // limita a quantidade de participantes a um valor definido
   limiteParticipantes++
-  if(limiteParticipantes <= 100){
+  if (limiteParticipantes <= 100) {
 
 
-  let participantes = [];
+    let participantes = [];
 
-  let nome = document.getElementById("nome").value;
-  let telefone = document.getElementById("fone").value;
-  let cpf = document.getElementById("cpf").value;
-  let palestra = document.getElementById("nome_evento").value;
-  let dataNacimento = document.getElementById("data_nascimento").value;
-  let data_brasileira = dataNacimento .split('-').reverse().join('/');
-  let dataEvento = document.getElementById("data_evento").value;
-  let data_brasileira_Evento = dataEvento .split('-').reverse().join('/');
+    let nome = document.getElementById("nome").value;
+    let telefone = document.getElementById("fone").value;
+    let cpf = document.getElementById("cpf").value;
+    let evento = document.getElementById("nome_evento").value;
+    let data_Nascimento = document.getElementById("data_nascimento").value;
+    let data_brasileira = data_Nascimento.split('-').reverse().join('/');
+    let data_Evento = document.getElementById("data_evento").value;
+    let data_brasileira_Evento = data_Evento.split('-').reverse().join('/');
 
-  if (sessionStorage.getItem("vetor_Participantes")) {
-    participantes = JSON.parse(sessionStorage.getItem("vetor_Participantes"));
-  };
+    if (nome === "" && telefone === "" && cpf === "" && evento === "" && data_Nascimento == "" && data_Evento == "") {
+      alert("Por favor, preencha os campos!")
 
+    } else {
 
-  let registro = {}
-  registro = {
-    nome: nome,
-    telefone: telefone,
-    cpf: cpf,
-    dataNascimento: data_brasileira,
-    dataEvento: data_brasileira_Evento,
-    Palestra: palestra
+      if (sessionStorage.getItem("vetor_Participantes")) {
+        participantes = JSON.parse(sessionStorage.getItem("vetor_Participantes"));
+      }
 
+      let registro = {}
+      registro = {
+        nome: nome,
+        telefone: telefone,
+        cpf: cpf,
+        dataNascimento: data_brasileira,
+        dataEvento: data_brasileira_Evento,
+        nomeEvento: evento,
+
+      }
+      participantes.push(registro);
+      sessionStorage.setItem("vetor_Participantes", JSON.stringify(participantes));
+      return true;
+
+    };
+
+  } else {
+    alert("Vagas esgotadas")
   }
-  participantes.push(registro);
-  sessionStorage.setItem("vetor_Participantes", JSON.stringify(participantes));
-
-  return true;
-
-}else{
-  alert("Vagas esgotadas")
-}
 
 };
+
+
 
 
 function listar() {
@@ -94,7 +105,7 @@ function listar() {
             celula.innerHTML = participantes[i]["dataEvento"];
             break;
           case "Nome_do_evento":
-            celula.innerHTML = participantes[i]["Palestra"];
+            celula.innerHTML = participantes[i]["nomeEvento"];
             break;
         };
       };

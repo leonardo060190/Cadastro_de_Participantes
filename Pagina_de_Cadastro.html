@@ -14,51 +14,52 @@
 
 <body class="container">
 
-    <div>
-        <h2>Faça o seu cadastro aqui!</h2>
-        <main class="conteudo">
-            <form name="Cadastrar" method="post" autocomplete="off">
-                <div>
-                    <div><label for="nome">Nome:</label></div>
-                    <input type="text" id="nome" name="nome" autocomplete="off" required>
-                </div>
-                <div>
-                    <div></div><label for="fone">Celular com DDD:</label>
-                </div>
-                <input type="tel" id="fone" name="fone" placeholder="11 99999-9999" autocomplete="off" required>
-    </div>
-    <div>
-        <div><label for="cpf">CPF:</label></div>
-        <input type="text" name="cpf" id="cpf" autocomplete="off" required>
-    </div>
-    <div>
-        <div><label for="data_nascimento">Data de Nascimento:</label></div>
-        <input type="date" id="data_nascimento" name="data_nascimento">
-    </div>
-    <div>
-        <div> <label for="data-evento">Data do Evento:</label></div>
-        <input type="date" id="data_evento" name="data_evento">
-    </div>
-    <br>
-    <div>
-        <div><label for="nome_evento">Nome do Evento:</label>
-        <select id="nome_evento" name="nome_evento">
-            <option value="Casamento">Casamento</option>
-            <option value="Aniversario">Aniversario</option>
-            <option value="Formatura">Formatura</option>
-            <option value="Outro">Outro</option>
-        </div>
-        </select>
-    </div>
-    <br>
-    <button type="button" value="Cadastrar" onclick="validarForm()">Cadastrar</button>
-    <button type="reset" name="" id="limpa">Limpar</button>
-    <button type="button" id="lista" onclick="window.location='lista_de_Participantes.html'">Retorne a Lista</button>
-    <br><br>
 
-    </div>
+    <h2>Faça o seu cadastro aqui!</h2>
+
+    <form name="Cadastrar" method="post" autocomplete="off">
+        <div>
+            <div><label for="nome">Nome:</label></div>
+            <input type="text" id="nome" name="nome" autocomplete="off" required>
+        </div>
+        <div>
+            <div><label for="fone">Celular com DDD:</label></div>
+
+            <input type="tel" id="fone" name="fone" placeholder="11 99999-9999" autocomplete="off" required>
+        </div>
+        <div>
+            <div><label for="cpf">CPF:</label></div>
+            <input type="text" name="cpf" id="cpf" autocomplete="off" required>
+        </div>
+        <div>
+            <div><label for="data_nascimento">Data de Nascimento:</label></div>
+            <input type="date" id="data_nascimento" name="data_nascimento">
+        </div>
+        <div>
+            <div> <label for="data-evento">Data do Evento:</label></div>
+            <input type="date" id="data_evento" name="data_evento">
+        </div>
+        <br>
+        <div>
+            <div><label for="nome_evento">Nome do Evento:</label>
+                <select id="nome_evento" name="nome_evento">
+                    <option value="Casamento">Casamento</option>
+                    <option value="Aniversario">Aniversario</option>
+                    <option value="Formatura">Formatura</option>
+                    <option value="Outro">Outro</option>
+            </div>
+            </select>
+        </div>
+        <br>
+        <button type="submit" value="Cadastrar" onclick="validarForm()">Cadastrar</button>
+        <button type="reset" name="" id="limpa">Limpar</button>
+        <button type="button" id="lista" onclick="window.location='lista_de_Participantes.html'">Retorne a
+            Lista</button>
+        <br><br>
+
+        </div>
     </form>
-    </main>
+
 
 
 
