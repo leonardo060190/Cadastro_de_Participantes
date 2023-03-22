@@ -4,14 +4,12 @@ var limiteParticipantes = 0;
 function validarForm() {
   // Código de validação aqui
 
-  if (validaDataEvento() && validaDataNascimento() && cadastro()) {
-
-    alert("Validação OK, Cadrastro efetuado com suceso!"
-    )
-
-
+  if (validaDataEvento() && validaDataNascimento()){
+    cadastro();
+    abrirListar();
+   
   } else {
-    alert("Você não esta autorizado")
+    alert("Preencha todos os campos corretmente!")
 
   }
 
@@ -35,10 +33,6 @@ function cadastro() {
     let data_Evento = document.getElementById("data_evento").value;
     let data_brasileira_Evento = data_Evento.split('-').reverse().join('/');
 
-    if (nome === "" && telefone === "" && cpf === "" && evento === "" && data_Nascimento == "" && data_Evento == "") {
-      alert("Por favor, preencha os campos!")
-
-    } else {
 
       if (sessionStorage.getItem("vetor_Participantes")) {
         participantes = JSON.parse(sessionStorage.getItem("vetor_Participantes"));
@@ -60,10 +54,8 @@ function cadastro() {
 
     };
 
-  } else {
     alert("Vagas esgotadas")
-  }
-
+  
 };
 
 
@@ -113,6 +105,10 @@ function listar() {
   };
   ;
 
+}
+
+function abrirListar(){
+  window.location.replace("../lista_de_Participantes.html");
 }
 
 function validaDataEvento() {
