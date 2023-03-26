@@ -1,115 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Sarala&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tiro+Tamil&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-
-}
-
 body {
-    font-size: 150%;
-    background: linear-gradient(68.15deg, #5d5263d8 16.62%, #403557e3 85.61%);
-	
-}
-
-.container{
-    display: block;
-    margin: 25%;
-    margin-top: 3%;
-    padding: 0%;
-	margin-bottom: 3px;
-}
-
-
-h1{
-    text-align: center;
-    font-size: 30px;
-}
-
-h2{
-	text-align: center;
-}
-
-
-
-table {
-	border-collapse: collapse;
-	width: 100%;
-	color: aliceblue;
-}
-
-td {
-	padding: 5px;
-	text-align: center;
-	border: 1px solid;
-	font-size: 18px;
-	border-color: red;
+	background: linear-gradient(68.15deg, hsl(234, 39%, 30%) 16.62%, #5817e491 85.61%);
 
 }
 
-th {
-	padding: 5px;
-	text-align: center;
-	border: 1px solid;
-	font-size: 18px;
-	border-color: red;
-	background-color: rgba(119, 119, 119, 0.212)
-}
-
-tr:hover {
-	background-color: rgba(236, 223, 223, 0.671);
-	color: black;
-}
-
-input {
-	width: 700px;
-	margin: 8px;
-	box-sizing: border-box;
-	border: 2px solid red;
-	border-radius: 4px;
-	font-size: 20px;
-    text-align: center;
-
-
-}
-
-button {
-	background-color: white;
-	color: black;
-	border: 2px solid #555555;
-	padding: 6px 50px;
-	border: 2px solid red;
-	margin: 2px 0;
-	border-radius: 4px;
-	font-size: 20px;
-    align-items: center;
-
-
-}
-
-button:hover {
-	background-color: rgba(77, 76, 76, 0.671);
-	color: white;
-   
-}
-
-hr {
-	border-color: goldenrod;
-	border-style: dashed;
-
-}
-
-select {
-	color: darkblue;
+.container {
+	margin: 3px 3px;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 18px;
-	border: 1px solid red;
-	border-radius: 5px;
-	width: 200px;
-	margin: 8px;
+	color: whitesmoke;
+	border-style: double;
+	border-width: 3px;
+	border-color: rgba(255, 0, 0, 0.336);
+}
 
+.container_lista {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 15px;
+	border-style: double;
+	border-width: 3px;
+	border-color: rgba(255, 0, 0, 0.349);
+	padding: 5px;
 }
 
 
+
+h2 {
+	text-align: center;
+	font-size: 30px;
+	color: black;
+}
+
+#data_nascimento {
+	width: 20%;
+}
+
+#data_evento {
+	width: 20%;
+}
+
+#nome_evento {
+	width: 20%;
+}
+
+#val {
+	text-align: center;
+	color: white;
+	font-size: 18px;
+}

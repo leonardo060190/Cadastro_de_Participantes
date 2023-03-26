@@ -4,10 +4,10 @@ var limiteParticipantes = 0;
 function validarForm() {
   // Código de validação aqui
 
-  if (validaDataEvento() && validaDataNascimento()){
+  if (validaDataEvento() && validaDataNascimento()) {
     cadastro();
     abrirListar();
-   
+
   } else {
     alert("Preencha todos os campos corretmente!")
 
@@ -19,7 +19,7 @@ function validarForm() {
 function cadastro() {
   // limita a quantidade de participantes a um valor definido
   limiteParticipantes++
-  if (limiteParticipantes <= 100) {
+  if (limiteParticipantes <= 2) {
 
 
     let participantes = [];
@@ -34,28 +34,28 @@ function cadastro() {
     let data_brasileira_Evento = data_Evento.split('-').reverse().join('/');
 
 
-      if (sessionStorage.getItem("vetor_Participantes")) {
-        participantes = JSON.parse(sessionStorage.getItem("vetor_Participantes"));
-      }
+    if (sessionStorage.getItem("vetor_Participantes")) {
+      participantes = JSON.parse(sessionStorage.getItem("vetor_Participantes"));
+    }
 
-      let registro = {}
-      registro = {
-        nome: nome,
-        telefone: telefone,
-        cpf: cpf,
-        dataNascimento: data_brasileira,
-        dataEvento: data_brasileira_Evento,
-        nomeEvento: evento,
+    let registro = {}
+    registro = {
+      nome: nome,
+      telefone: telefone,
+      cpf: cpf,
+      dataNascimento: data_brasileira,
+      dataEvento: data_brasileira_Evento,
+      nomeEvento: evento,
 
-      }
-      participantes.push(registro);
-      sessionStorage.setItem("vetor_Participantes", JSON.stringify(participantes));
-      return true;
+    }
+    participantes.push(registro);
+    sessionStorage.setItem("vetor_Participantes", JSON.stringify(participantes));
+    return true;
 
-    };
+  };
 
-    alert("Vagas esgotadas")
-  
+  alert("Vagas esgotadas")
+
 };
 
 
@@ -103,11 +103,26 @@ function listar() {
       };
     };
   };
-  ;
 
+  var eventos = {};
+  for (var i = 0; i < participantes.length; i++) {
+    var registro = participantes[i];
+    if (!eventos[registro.nomeEvento]) {
+      eventos[registro.nomeEvento] = 0;
+    }
+    eventos[registro.nomeEvento]++;
+  }
+  var resultado = "";
+  for (var evento in eventos) {
+    resultado += `O evento "${evento}" tem ${eventos[evento]} participante(s).<br>`;
+  }
+  console.log(resultado)
+  // document.write(resultado);
+  val.innerHTML = resultado;
 }
 
-function abrirListar(){
+
+function abrirListar() {
   window.location.replace("../lista_de_Participantes.html");
 }
 
@@ -152,4 +167,5 @@ function validaDataNascimento() {
     return false
   }
 }
+
 
